@@ -2,7 +2,7 @@
 var x=prompt("Enter the number of password length you want from 7 to 16: ","0");
 var plength=parseInt(x);
 var password=document.getElementById("password");
-
+var copyCount = 0; // Initialize the counter
 
  function genPassword() {
     var chars1 = "abcdefghijkmnpqrstuvwxyz";
@@ -42,4 +42,7 @@ function copyPassword() {
   var copyText = document.getElementById("password");
   copyText.select();
   document.execCommand("copy");
+  copyCount++;
+  document.getElementById("copyCounter").textContent = 
+    "Number of times copied: " + copyCount;
 }
